@@ -32,12 +32,22 @@ public class CustomListTest {
     }
 
     @Test
-    public void hasCity() {
+    public void hasCityTest() {
         list = MockCityList();
         City city = new City("Estevan", "SK");
         assertEquals(false, list.hasCity(city));
         list.addCity(city);
         assertEquals(true, list.hasCity(city));
+    }
+
+    @Test
+    public void deleteCityTest() {
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertEquals(true, list.hasCity(city));
+        list.deleteCity(city);
+        assertEquals(false, list.hasCity(city));
     }
 
 }
